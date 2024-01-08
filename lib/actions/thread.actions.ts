@@ -134,13 +134,14 @@ export async function addCommentToThread(
         const savedCommentThread = await commentThread.save();
 
         // Update
-
-        originalThread.children.push(savedCommentThread)
+        originalThread.children.push(savedCommentThread._id);
 
 
         // Save original thread
         await originalThread.save()
 
+
+       revalidatePath(path);
     } 
     catch (error:any) {
       throw new Error(`Error adding comment to thread: ${error.message}`)
