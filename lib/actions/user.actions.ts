@@ -8,7 +8,7 @@ import { TypeOf } from "zod";
 import { access } from "fs";
 
 interface Params {
-  userId: string;
+  userId: string | undefined;
   username: string;
   name: string;
   bio: string;
