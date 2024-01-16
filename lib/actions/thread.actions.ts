@@ -33,7 +33,7 @@ export async function createThread({
 
     revalidatePath(path);
   } catch (error: any) {
-    throw new Error(`Error creating thread: ${error.message}`);
+    console.log(error)
   }
 }
 
@@ -134,7 +134,11 @@ export async function addCommentToThread(
         const savedCommentThread = await commentThread.save();
 
         // Update
-        originalThread.children.push(savedCommentThread._id);
+        // originalThread.updateOne(
+        //   {$push: {children:savedCommentThread._id}}
+        // )
+
+        await originalThread.children.push(savedCommentThread._id);
 
 
         // Save original thread
@@ -144,6 +148,6 @@ export async function addCommentToThread(
        revalidatePath(path);
     } 
     catch (error:any) {
-      throw new Error(`Error adding comment to thread: ${error.message}`)
+     console.log("Comment error " + error)
     }
 }

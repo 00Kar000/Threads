@@ -51,7 +51,7 @@ const PostThread = ({userId}:{userId:string}) => {
         text:values.thread,
         author:userId,
         communityId:null,
-        path:pathname
+        path:pathname,
     })
 
     router.push("/")

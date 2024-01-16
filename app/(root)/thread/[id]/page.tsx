@@ -44,8 +44,9 @@ const Page = async ({ params }: { params: { id: string } }) => {
           currentUserId={JSON.stringify(userInfo._id)}
         />
       </div>
+
       <div className="mt-10">
-        {thread.length > 1 && thread.map((childItem: any) => (
+        {thread.children.map((childItem: any) => (
           <ThreadCard
             key={childItem._id}
             id={childItem._id}

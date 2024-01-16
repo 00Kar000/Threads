@@ -48,7 +48,7 @@ function ThreadCard({
       <div className='flex items-start justify-between'>
         <div className='flex w-full flex-1 flex-row gap-4'>
           <div className='flex flex-col items-center'>
-            <Link href={`/profile/${author.id}`} className='relative h-11 w-11'>
+            <Link href={`/profile/${author.id }`} className='relative h-11 w-11'>
               <Image
                 src={author.image}
                 alt='user_community_image'
@@ -63,7 +63,7 @@ function ThreadCard({
           <div className='flex w-full flex-col'>
             <Link href={`/profile/${author.id}`} className='w-fit'>
               <h4 className='cursor-pointer text-base-semibold text-light-1'>
-                {author.name}
+                {author.name}  
               </h4>
             </Link>
 
@@ -102,21 +102,20 @@ function ThreadCard({
                   className='cursor-pointer object-contain'
                 />
               </div>
-{/* 
               {isComment && comments?.length > 0 && (
                 <Link href={`/thread/${id}`}>
                   <p className='mt-1 text-subtle-medium text-gray-1'>
                     {comments.length} repl{comments.length > 1 ? "ies" : "y"}
                   </p>
                 </Link>
-              )} */}
+              )} 
             </div>
           </div>
         </div>
 
       </div>
 
-      {/* {!isComment && comments.length > 0 && (
+       {!isComment && comments.length > 0 && (
         <div className='ml-1 mt-3 flex items-center gap-2'>
           {comments.slice(0, 2).map((comment, index) => (
             <Image
@@ -135,9 +134,9 @@ function ThreadCard({
             </p>
           </Link>
         </div>
-      )} */}
+      )} 
 
-      {/* {!isComment && community && (
+       {!isComment && community && (
         <Link
           href={`/communities/${community.id}`}
           className='mt-5 flex items-center'
@@ -155,7 +154,7 @@ function ThreadCard({
             className='ml-1 rounded-full object-cover'
           />
         </Link>
-      )} */}
+      )} 
     </article>
   );
 }
