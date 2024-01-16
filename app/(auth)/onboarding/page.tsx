@@ -4,18 +4,14 @@ import AccountProfile from "@/components/forms/AccountProfile";
 async function Page() {
     const user = await currentUser();
 
-    const userInfo = {
-
-    };
-
 
     const userData = {
         id: user?.id,
-        objectId: userInfo?._id,
-        username: userInfo?.username || user.username,
-        name:  userInfo?.name || user.firstName,
-        bio:  userInfo?.bio || "",
-        image: userInfo?.image || user.imageUrl,
+        objectId: user?.id,
+        username:user?.username,
+        name:user?.firstName,
+        bio:  "",
+        image: user?.imageUrl,
       };
     
 
